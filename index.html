@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="blue">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel=stylesheet href="css/normalize.css"/>
+    <link rel=stylesheet href="css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div id="header">
+      <span>calc</span>
+      <div id="theme-switcher">
+        <span>theme</span>
+        <div id="switcher">
+          <div>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+          <div id=switcher-bullets>
+            <span class = active></span>
+            <span ></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen">
+      <span>Welcome</span>
+    </div>
+
+    <div id="buttons-container">
+      <span class="num" data-value="7">7</span>
+      <span class="num" data-value="8">8</span>
+      <span class="num" data-value="9">9</span>
+      <span class=del-rst id =del>del</span>
+      <span class="num" data-value="4">4</span>
+      <span class="num" data-value="5">5</span>
+      <span class="num" data-value="6">6</span>
+      <span class="num"  data-value="+">+</span>
+      <span class="num" data-value="3">3</span>
+      <span class="num" data-value="2">2</span>
+      <span class="num" data-value="1">1</span>
+      <span class="num"  data-value="-">-</span>
+      <span class="num" data-value=".">.</span>
+      <span class="num" data-value="0">0</span>
+      <span class="num"  data-value="/">/</span>
+      <span class="num" data-value="*">x</span>
+      <span class=del-rst id=reset>reset</span>
+      <span id=equal>=</span>
+    </div>
+    <script src = "js/main.js"></script>
+  </body>
+</html>

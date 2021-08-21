@@ -1,0 +1,149 @@
+*{box-sizing: border-box;}
+/*Themes*/
+[data-theme = "blue"]{
+    --bg-main:hsl(222, 26%, 31%);
+    --keypad-toggle-bg:hsl(223, 31%, 20%);
+    --screen-bg:hsl(223, 41%, 10%);
+    --key-del-bg:hsl(225, 21%, 49%);
+    --key--del-shadow:hsl(224, 28%, 35%);
+    --equal-toggle-bg:hsl(6, 63%, 50%);
+    --equal-shadow:hsl(6, 70%, 34%);
+    --key-bg:hsl(30, 25%, 89%);
+    --key-shadow:hsl(28, 16%, 65%);
+    --txt:hsl(221, 14%, 31%);
+}
+[data-theme = "grey"]{
+    --bg-main:hsl(0, 0%, 90%);
+    --keypad-toggle-bg:hsl(0, 5%, 81%);
+    --screen-bg:hsl(0, 0%, 93%);
+    --key-del-bg:hsl(185, 42%, 37%);
+    --key--del-shadow: hsl(185, 58%, 25%);
+    --equal-toggle-bg:hsl(25, 98%, 40%);
+    --equal-shadow:hsl(25, 99%, 27%);
+    --key-bg:hsl(45, 7%, 89%);
+    --key-shadow:hsl(35, 11%, 61%);
+    --txt:hsl(60, 10%, 19%);
+}
+[data-theme = "violet"]{
+    --bg-main:hsl(268, 75%, 9%);
+    --keypad-toggle-bg:hsl(268, 71%, 12%);
+    --screen-bg:hsl(268, 71%, 12%);
+    --key-del-bg: hsl(281, 89%, 26%);
+    --key--del-shadow:hsl(285, 91%, 52%);
+    --equal-toggle-bg:hsl(176, 100%, 44%);
+    --equal-shadow:hsl(177, 92%, 70%);
+    --key-bg:hsl(268, 47%, 21%);
+    --key-shadow:hsl(290, 70%, 36%);
+    --txt:hsl(52, 100%, 62%);
+}
+/*...*/
+body{
+    background-color: var(--bg-main);
+    font-family: Spartan;
+    font-size:32px;
+}
+#header,#screen,#buttons-container{width:500px;margin:0 auto;}
+/*header (switcher)*/
+#header{
+    display: flex;
+    justify-content:space-between ;
+    margin:80px auto 30px;
+    color:var(--txt);
+}
+#theme-switcher{
+    display: flex;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+#theme-switcher>span{margin-top:12px;}
+#switcher{
+    display: flex;
+    width:50px;
+    margin-left:10px;
+    flex-direction: column;
+}
+#switcher >div{display: flex;justify-content: space-between;}
+#switcher div:first-child{font-size: 8px;margin-left:4px}
+#switcher-bullets{
+    background-color: var(--keypad-toggle-bg);
+    height: 15px;
+    width:110%;
+    padding:0 4px;
+    border-radius: 10px;
+    margin-top:2px;
+}
+#switcher-bullets span{
+    display:inline-block;
+    width:25%;
+    height:70%;
+    margin-top:2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#switcher-bullets span:first-child.active{background-color:hsl(6, 63%, 50%) ;}
+#switcher-bullets span:nth-child(2).active{background-color: hsl(25, 98%, 40%);}
+#switcher-bullets span:last-child.active{background-color: hsl(176, 100%, 44%);}
+/*end header*/
+/*screen*/
+#screen{
+    background-color: var(--screen-bg);
+    color:var(--txt);
+    height: 100px;
+    padding:25px;
+    font-size: 46px;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom:25px;
+}
+[data-theme = "blue"] #screen,[data-theme = "blue"] #header{color:white}
+/*end screen*/
+/*Buttons container*/
+#buttons-container{
+    background-color: var(--keypad-toggle-bg);
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    padding:20px 25px;
+    column-gap:20px;
+    row-gap: 30px;
+    border-radius: 10px;
+    margin-bottom:30px;
+}
+#buttons-container span:nth-child(17){grid-column: 1/3;}
+#equal{grid-column: 3/5;}
+#buttons-container span{
+    display: inline-block;
+    height: 54px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+} 
+.num,#equal{padding-top:12px;}
+.num{
+    color:var(--txt);
+    background-color: var(--key-bg);
+    box-shadow:  0 3px 3px var(--key-shadow);
+}
+.del-rst,#equal{color:white}
+.del-rst{
+    background-color: var(--key-del-bg);
+    box-shadow:0 3px 3px var(--key--del-shadow) ;
+    text-transform: uppercase;
+    font-size: 22px;
+    padding-top:18px;
+}
+#equal{
+    background-color: var(--equal-toggle-bg);
+    box-shadow:0 3px 3px var(--equal-shadow) ;
+}
+[data-theme = "violet"] #equal{color:hsl(60, 10%, 19%)}
+.click-button{transform:translateY(12px)}
+/*end buttons container*/
+/*Mobile*/
+@media (max-width:769px){
+    #header,#screen,#buttons-container{width:90%;}
+}
+/*Font*/
+@font-face {
+    font-family: Spartan;
+    src: url(../font/Spartan-Bold.ttf);
+}
